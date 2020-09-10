@@ -43,3 +43,9 @@ docker exec -ti flarum extension require darkfoxdeveloper/flarum-ext-spanish
 # Instalación de la extensión que permite configurar el acceso mediante LDAP
 docker exec -ti flarum extension require tituspijean/flarum-ext-auth-ldap
 ```
+
+## Personalización literales
+```
+# Directorio de almacenamiento de literales en el servidor del contenedor (/flarum/app/vendor/darkfoxdeveloper/flarum-ext-spanish/locale )
+docker cp ./personalizar/locale/core.yml flarum:/flarum/app/vendor/darkfoxdeveloper/flarum-ext-spanish/locale
+´´´
