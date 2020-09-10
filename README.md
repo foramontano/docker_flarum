@@ -9,12 +9,17 @@ version: "3"
 
 services:
   flarum:
+#    build:
+#      context: ./
+#      dockerfile: Dockerfile
     image: mondedie/flarum:stable
     container_name: flarum
     env_file:
       - .flarum.env
     ports:
       - "9003:8888"
+    environment:
+      - PHP_EXTENSIONS=ldap
     volumes:
       - /mnt/docker/flarum/assets:/flarum/app/public/assets
       - /mnt/docker/flarum/extensions:/flarum/app/extensions
@@ -33,6 +38,7 @@ services:
     volumes:
       - /mnt/docker/mysql-flarum/db:/var/lib/mysql
 ```
+En él se incluye la **extensión PHP para LDAP**
 
 ## Instalación de extensiones
 
